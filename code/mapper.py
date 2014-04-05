@@ -4,9 +4,9 @@ import numpy as np
 import random
 import sys
 
-w = np.ones(400)
+w = np.zeros(400)
 lam = 0.1
-nt = 0.1
+nt = 10
 
 # This function has to either stay in this form or implement the
 # feature mapping. For details refer to the handout pdf.
@@ -40,5 +40,5 @@ if __name__ == "__main__":
                 for i in range(0,400,1):
                     w[i] = wp[i] * 1/np.sqrt(lam*s)
     for i in range(0,400,1):
-        print "%f " % w[i]
+        print "%f " % w[i],
     print "\n"
