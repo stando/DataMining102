@@ -5,9 +5,11 @@ import numpy as np
 
 w = []
 num = 0
+nlen = 800
+#nlen = 80600
 #last_key = None
-le = [0 for j in range(400)]
-d =[[0 for j in range(400)] for i in range(400)]
+le = [0 for j in range(nlen)]
+d =[[0 for j in range(nlen)] for i in range(nlen)]
 
 
 if __name__ == "__main__":
@@ -25,7 +27,7 @@ if __name__ == "__main__":
         else:
             last_key = key
         """
-    for i in range(0,400,1):
+    for i in range(0,nlen,1):
         s = 0.0
         #print "%d %d" %(i, le[i])
         for j in range(1, le[i]+1,1):
