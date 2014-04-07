@@ -4,18 +4,33 @@ import sys
 import numpy as np
 
 w = []
+num = 0
+#last_key = None
+le = [0 for j in range(400)]
+d =[[0 for j in range(400)] for i in range(400)]
+
 
 if __name__ == "__main__":
     for line in sys.stdin:
         line = line.strip()
-        x = np.fromstring(line,sep=" ")
-        w.append(x)
-    #wei = w.mean(0)
+        key, x = np.fromstring(line,sep="\t")
+        key = int(key)
+        le[key] = le[key] + 1
+        d[key][le[key]] = float(x)
+        """
+        if last_key is None:
+            last_key =  key
+        if key == last_key:
+            d[key].append(x)
+        else:
+            last_key = key
+        """
     for i in range(0,400,1):
-        s = 0
-        for j in range(0,10,1):
-            s = s + w[j][i]
-        s /= 10
+        s = 0.0
+        #print "%d %d" %(i, le[i])
+        for j in range(1, le[i]+1,1):
+            s = s + d[i][j]
+        s /= le[i]
         print "%f " % s,
     print "\n"
 

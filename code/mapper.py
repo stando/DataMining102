@@ -40,5 +40,4 @@ if __name__ == "__main__":
                 for i in range(0,400,1):
                     w[i] = wp[i] * 1/np.sqrt(lam*s)
     for i in range(0,400,1):
-        print "%f " % w[i],
-    print "\n"
+        print "%d\t%f" % (i, w[i])
