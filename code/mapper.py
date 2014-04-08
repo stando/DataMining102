@@ -7,14 +7,23 @@ import sys
 lam = 0.1
 nt = 10
 #nlen = 80600
-nlen = 800
+nlen = 160400
+#nlen = 800
 w = np.zeros(nlen)
 
 # This function has to either stay in this form or implement the
 # feature mapping. For details refer to the handout pdf.
 def transform(x_original):
-    y_original = np.square(x_original)
-    y_original = np.concatenate((x_original, y_original), axis=0)
+    y_original = x_original
+    for x in range(0,400,1):
+        z_original = np.multiply(x_original, x_original[x])
+        y_original = np.concatenate((y_original, z_original), axis=0)
+    """
+    y_original = x_original
+    for x in range(0,400,1);
+        z_original = np.multiple(x_original)
+        y_original = np.concatenate((x_original, y_original), axis=0)
+    """
     """
     y_original = x_original
     for x in range(0,400,1):
