@@ -6,7 +6,7 @@ import numpy as np
 w = []
 num = 0
 #nlen = 800
-nlen = 160400
+nlen = 400
 #last_key = None
 le = [0 for j in range(nlen)]
 d =[[0 for j in range(50)] for i in range(nlen)]
